@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+        .lexend {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+
+    <title>FAQ Page</title>
+</head>
+
+<body class="lexend">
+    <nav class="bg-amber-50">
+        <div class="max-w-screen-xl mx-auto flex justify-between py-6">
+
+            <p class="cursor-pointer py-3 px-8 bg-lime-300 hover:bg-lime-400 rounded-lg"><a href="index.html">Home</a>
+            </p>
+            <p class="flex items-center gap-4"><img src="images/logo.png" alt=""> Donate Bangladesh
+            </p>
+            <p class="flex items-center gap-4"> <img src="images/coin.png" alt="">
+                <span id="availableBalance">500000</span> BDT
+            </p>
+        </div>
+    </nav>
+    <section class="max-w-screen-xl mx-auto grid gap-3 mt-7">
+        <h2 class="text-2xl font-extrabold">Important FAQ</h2>
+        <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title text-xl font-medium">What is document object model (DOM)</div>
+            <div class="collapse-content">
+                <p>DOM is a programming interface that represents HTML or XML documents as a tree structure. Each element, attribute, and piece of text in the document is a node, allowing JavaScript to interact with and manipulate the document
+
+                </p>
+            </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium"> How do we select an element.</div>
+            <div class="collapse-content">
+                <p>There are 4 ways to select an element <br>
+                    1.getElementById <br>
+
+                    2.getElementsByClassName <br>
+                    
+                    3.getElementsByTagName <br>
+                    
+                    4.querySelector</p>
+            </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium">What is event delegation in the context of DOM?</div>
+            <div class="collapse-content">
+                <p>Event delegation is a technique that involves attaching a single event listener to a parent element instead of individual child elements. When an event occurs, it bubbles up to the parent, allowing you to check which child triggered it.</p>
+            </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-200"></div>
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium">How do we manipulate an elements attributes and styles with the DOM? </div>
+            <div class="collapse-content">
+                <p>1. setAttribute <br>
+
+                    2. getAttribute <br>
+                    
+                    3. removeAttribute</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

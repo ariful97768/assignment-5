@@ -1,0 +1,131 @@
+// function donateNow(name) {
+// // let availableBalance = parseInt(document.getElementById('availableBalance').innerText);
+// // const noakhali = document.getElementById('noakhaliBalance');
+// // const feni = document.getElementById('feniBalance');
+// // const qouta = document.getElementById('qoutaBalance');
+
+// if (name == 'noakhali') {
+// let currentDonationBalance = parseInt(document.getElementById('noakhaliBalance').innerText);
+// const inputBalance = parseInt(document.getElementById('noakhaliInput').value);
+// } else if (namee == 'feni') {
+// const currentDonationBalance = parseInt(document.getElementById('feniBalance').innerText);
+// const inputBalance = parseInt(document.getElementById('feniInput').value);
+// } else if (name == 'qouta') {
+// const currentDonationBalance = parseInt(document.getElementById('qoutaBalance').innerText);
+// const inputBalance = parseInt(document.getElementById('qoutaInput').value);
+// }
+
+// let newBalance = currentDonationBalance + inputBalance;
+// let newAvailableBalance = availableBalance - inputBalance;
+
+// console.log( newBalance, newAvailableBalance)
+// }
+// donateNow('noakhali')
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="availableBalance">5000</p>
+
+    <div>
+        <p id="noakhaliBalance">1500</p>
+        <input id="noakhaliInput" type="text" placeholder="Enter amount">
+        <button onclick="donateNow('noakhali')">Noakhali</button>
+    </div>
+
+    <div>
+        <p id="feniBalance">1000</p>
+        <input id="feniInput" type="text" placeholder="Enter amount">
+        <button onclick="donateNow('feni')">Feni</button>
+    </div>
+
+    <div>
+        <p id="qoutaBalance">1200</p>
+        <input id="qoutaInput" type="text" required placeholder="Enter amount">
+        <button onclick="donateNow('qouta')">Qouta</button>
+    </div>
+
+    <section id="historySection">
+
+    </section>
+
+    <!-- <script>
+        document.getElementById('donateNowbtn').addEventListener('click', function donateNow () {
+
+            let AvailableBalance = parseInt(document.getElementById('availableBalance').innerText);
+            let CurrentBalance = parseInt(document.getElementById('currentBalance').innerText)
+            let Input = parseInt(document.getElementById('input').value)
+
+            let newBalance = Input + CurrentBalance;
+            let newAvailableBalance =  AvailableBalance - Input;
+            document.getElementById('currentBalance').innerText = newBalance
+            document.getElementById('availableBalance').innerText = newAvailableBalance
+            console.log(newBalance, newAvailableBalance)
+        })
+    </script> -->
+
+    <script>
+        function donateNow(name) {
+            let availableBalance = parseInt(document.getElementById('availableBalance').innerText);
+            const noakhali = document.getElementById('noakhaliBalance');
+            const feni = document.getElementById('feniBalance');
+            const qouta = document.getElementById('qoutaBalance');
+
+            let currentDonationBalance, inputAmount;
+            if (name == 'noakhali') {
+                currentDonationBalance = parseInt(document.getElementById('noakhaliBalance').innerText);
+                inputAmount = parseInt(document.getElementById('noakhaliInput').value);
+            } else if (name == 'feni') {
+                currentDonationBalance = parseInt(document.getElementById('feniBalance').innerText);
+                inputAmount = parseInt(document.getElementById('feniInput').value);
+            } else if (name == 'qouta') {
+                currentDonationBalance = parseInt(document.getElementById('qoutaBalance').innerText);
+                inputAmount = parseInt(document.getElementById('qoutaInput').value);
+            }
+
+
+            if (availableBalance <= 0 || availableBalance < inputAmount) {
+                alert('Top up your balance first');
+                return;
+            } else if (inputAmount <= 0 || isNaN(inputAmount)) {
+                alert("Invalid donation amount")
+                return;
+            } else {
+                let newBalance = currentDonationBalance + inputAmount;
+                let newAvailableBalance = availableBalance - inputAmount;
+                document.getElementById('availableBalance').innerText = newAvailableBalance;
+
+                if (name == 'noakhali') {
+                    document.getElementById('noakhaliBalance').innerText = newBalance;
+                    alert('Thank you for donating')
+                } else if (name == 'feni') {
+                    document.getElementById('feniBalance').innerText = newBalance;
+                    alert('Thank you for donating')
+                } else if (name == 'qouta') {
+                    document.getElementById('qoutaBalance').innerText = newBalance;
+                    alert('Thank you for donating')
+                }
+
+            }
+            // let historyMessage = 
+            document.getElementById('historySection').innerHTML += `
+            <div class="border-2 px-8 py-8 rounded-xl mb-6">
+                <h3 class="text-xl font-bold"> ${inputAmount} Taka is Donated for feni-2024 at Feni, Bangladesh</h3>
+                <p class="font-light opacity-70 mt-4">Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)</p>
+            </div>
+            `
+        }
+        // donateNow('noakhali')
+    </script>
+</body>
+
+</html>
